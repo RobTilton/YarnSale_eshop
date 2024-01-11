@@ -14,13 +14,5 @@ router.register(r'ordered_items', OrderItemViewSet)
 router.register(r'payment', PaymentViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
-    path('', views.index, name='index'),
-]
-
-
-
-
-
-urlpatterns = [
+    path('', include(router.urls)),
 ]
