@@ -20,29 +20,28 @@ main {
 
 /* Styling for the content on the home page */
 .text-center {
-    margin-top: 2rem; /* Adjust top margin to position the text higher */
+    margin-top: 2rem; /* Adjust top margin to position the text higher -- doesnt work... */
 }
-
 .text-center h1 {
     color: #F0A500;
     font-size: 4rem; /* Large font size for the main heading */
     text-shadow: 2px 2px 8px #1B1A17; /* Text shadow for legibility */
 }
-
 .text-center p {
     color: #fff;
     font-size: 1.5rem; /* Size of the subheading */
-    text-shadow: 2px 2px 8px #1B1A17; /* Text shadow for legibility */
+    text-shadow: 2px 2px 8px #1B1A17;
 }
 
 
+/* Styling for the navbar */
 .navbar {
     background-color: rgba(255, 255, 255, 0); /* Fully transparent */
     background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(255, 255, 255, 0)); 
 }
 
 .navbar {
-    justify-content: center;
+    justify-content: center; /* doesnt work, research */
 }
 
 /* Style for navbar links */
@@ -53,7 +52,6 @@ main {
 
 .custom-nav-link:hover {
     color: #fdfdfd; /* Your desired color on hover */
-    /* Other hover styles */
 }
 
 
@@ -66,5 +64,5 @@ main {
 /* Footer text color */
 .footer .text-muted {
     color: #fff;
-     
+    text-shadow: 2px 2px 8px #1B1A17; 
 }
