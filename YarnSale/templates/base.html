@@ -15,16 +15,12 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">YarnSale</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link custom-nav-link" href="{% url 'home' %}">YarnSale</a>
                     </li>
                     <!-- Add more navigation items here -->
                 </ul>
@@ -40,7 +36,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark">
+    <footer class="footer mt-auto py-3">
         <div class="container">
             <span class="text-muted">© 2024 YarnSale, Inc. All rights reserved.</span>
             <span class="text-muted">Not Intended For Use.</span>
@@ -49,9 +45,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yEx1q6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-SX5eB5p+6Cn7yJwUig5u8Kj0B5F2JjHnQpv8i0LQJ1hXzim/ZVmg7rW8CLqbTmBl" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy4Ck4SOF4y4Ck4C+5F4nE9B4JG2JW+Ew5" crossorigin="anonymous"></script>
     {% block extrajs %}{% endblock %}
 </body>
 </html>
