@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Your home page content goes here -->
+    <!-- Hero Section -->
+    <section id="hero" class="text-center">
+        <img src="{% static 'images/hero.jpg' %}" alt="Yarn Sale" class="img-fluid">
+        <h1>Welcome to YarnSale</h1>
+        <p>Your one-stop shop for quality yarn</p>
+        <a href="{% url 'products' %}" class="btn btn-primary">Shop Now</a>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured-products" class="text-center my-4">
+        <h2>Featured Products</h2>
+        <!-- Products grid -->
+        <div class="row">
+            <!-- Sample product -->
+            <div class="col-md-4 mb-3">
+                <img src="{% static 'images/product1.jpg' %}" alt="Product 1" class="img-fluid">
+                <h3>Product 1</h3>
+                <p>$19.99</p>
+            </div>
+            <!-- Repeat for other products -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="my-4">
+        <h2>About YarnSale</h2>
+        <p>We provide high-quality yarn sourced from the best materials.</p>
+    </section>
+
+    <!-- Contact Information -->
+    <section id="contact-info" class="text-center my-4">
+        <h2>Contact Us</h2>
+        <p>Email: contact@yarnsale.com</p>
+    </section>
 {% endblock %}

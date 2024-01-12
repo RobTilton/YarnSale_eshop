@@ -1,30 +1,57 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}YarnSale Store{% endblock %}</title>
+    <title>{% block title %}YarnSale - Your Online Yarn Store{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     {% block extrahead %}{% endblock %}
-    <!-- Add CSS links here (e.g., Bootstrap) -->
 </head>
 <body>
-    <header>
-        <!-- Navigation bar, logo, etc. -->
-    </header>
 
-    <main>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">YarnSale</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <!-- Add more navigation items here -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main role="main" class="container mt-4">
         {% block content %}
-        The is Base.html main content
-        <!-- Main page content will be here -->
+        <!-- The unique content of each page will be inserted here -->
         {% endblock %}
     </main>
 
-    <footer>
-        This is Base.html footer content
-        <!-- Footer content -->
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container">
+            <span class="text-muted">© 2024 YarnSale, Inc. All rights reserved.</span>
+            <span class="text-muted">Not Intended For Use.</span>
+        </div>
     </footer>
 
-    <!-- Add JavaScript files at the end of the body -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yEx1q6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-SX5eB5p+6Cn7yJwUig5u8Kj0B5F2JjHnQpv8i0LQJ1hXzim/ZVmg7rW8CLqbTmBl" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy4Ck4SOF4y4Ck4C+5F4nE9B4JG2JW+Ew5" crossorigin="anonymous"></script>
     {% block extrajs %}{% endblock %}
 </body>
 </html>
