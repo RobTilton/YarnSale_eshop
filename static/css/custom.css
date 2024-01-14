@@ -49,6 +49,10 @@ html body footer.footer {
 }
 
 /* Navbar links */
+html body nav.navbar .navbar-nav {
+    padding-right: 350px;
+}
+
 html body nav.navbar .navbar-nav .nav-link {
     color: #0c0800 !important;
 }
@@ -58,7 +62,7 @@ html body nav.navbar .navbar-nav .nav-link:hover {
 .custom-nav-link {
     font-family: 'Times New Roman', Times, serif;
     font-size: xx-large;
-    text-shadow: 2px 2px 8px rgb(233, 178, 126)
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.555)
 
 }
 
