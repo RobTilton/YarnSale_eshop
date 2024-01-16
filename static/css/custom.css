@@ -4,8 +4,6 @@ html, body {
     height: 100%;
     margin: 0;
 }
-
-
 body {
     display: flex;
     flex-direction: column;
@@ -32,6 +30,10 @@ main {
     font-size: 1.5rem; /* Size of the subheading */
     text-shadow: 2px 2px 8px rgb(0, 0, 0); /* Text shadow for legibility */
 }
+.home-page-background {
+    background: url('/static/images/YarnSale.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
 
 /* Ensures the custom styles take precedence over Bootstrap */
 html body nav.navbar,
@@ -46,6 +48,9 @@ html body nav.navbar {
 }
 html body footer.footer {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)) !important;
+}
+html body footer.footer .text-muted {
+    color: #ff0000 !important;
 }
 
 /* Navbar links */
@@ -66,22 +71,13 @@ html body nav.navbar .navbar-nav .nav-link:hover {
 
 }
 
-/* Color of text inside the footer */
-html body footer.footer .text-muted {
-    color: #ff0000 !important;
-}
 
-.home-page-background {
-    background: url('/static/images/YarnSale.jpeg') no-repeat center center fixed;
-    background-size: cover;
-}
 
 .utility-page-background {
     background: #f5f5f5;
     color: #333; 
     padding: 0rem; 
 }
-
 .utility-page-content {
     max-width: 800px;
     margin: auto;
@@ -90,23 +86,17 @@ html body footer.footer .text-muted {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border-radius: 8px; 
 }
-
-
 .utility-page-content h1 {
     color: #0c0800; 
     margin-bottom: 1rem; 
 }
-
 .utility-page-content p {
     font-size: 1.1rem; 
     line-height: 1.6; 
 }
-
-
 .contact-form {
     margin-top: 2rem;  
 }
-
 .contact-form input,
 .contact-form textarea {
     width: 100%; 
@@ -114,7 +104,6 @@ html body footer.footer .text-muted {
     padding: 0.5rem;
     border: 1px solid #ccc;
 }
-
 .contact-form button {
     background-color: #0c0800; 
     color: white;
