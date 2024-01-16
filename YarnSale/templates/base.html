@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     {% block extrahead %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <!-- Navigation Bar -->
 
     <nav class="navbar navbar-expand-md">

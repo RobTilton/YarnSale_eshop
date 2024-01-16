@@ -71,9 +71,7 @@ html body footer.footer .text-muted {
     color: #ff0000 !important;
 }
 
-home-background {
-    display: flex;
-    flex-direction: column;
+.home-page-background {
     background: url('/static/images/YarnSale.jpeg') no-repeat center center fixed;
     background-size: cover;
 }
