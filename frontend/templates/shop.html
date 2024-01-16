@@ -2,9 +2,21 @@
 {% load static %}
 
 {% block content %}
-    <!-- Simple Content Area -->
     <div class="text-center my-5 py-5">
         <h1>The Shop Page</h1>
         <p>The Page Where You Can Buy The Things</p>
+        <div class="product-list">
+            {% for product in products %}
+                <div class="product-item">
+                    <h2>{{ product.name }}</h2>
+                    <p>{{ product.description }}</p>
+                    <p>Price: ${{ product.price }}</p>
+                    <!-- Display the image if it exists -->
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

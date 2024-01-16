@@ -4,11 +4,11 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
+
 body {
     display: flex;
     flex-direction: column;
-    background: url('/static/images/YarnSale.jpeg') no-repeat center center fixed;
-    background-size: cover;
 }
 main {
     flex: 1;
@@ -69,4 +69,11 @@ html body nav.navbar .navbar-nav .nav-link:hover {
 /* Color of text inside the footer */
 html body footer.footer .text-muted {
     color: #ff0000 !important;
+}
+
+home-background {
+    display: flex;
+    flex-direction: column;
+    background: url('/static/images/YarnSale.jpeg') no-repeat center center fixed;
+    background-size: cover;
 }
