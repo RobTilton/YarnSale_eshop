@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
-from shop.models import Product
+from shop.models import Product, ProductAttribute
 
 
 def home(request):
@@ -34,5 +34,19 @@ def contact(request):
     return render(request, 'contact.html')
 
 def shop(request):
-    products = Product.objects.all()
+    query = request.GET.get('q')
+    if query:
+        # Start with a distinct QuerySet of products
+        products = Product.objects.distinct()
+        # Filter products by name or their attributes
+        products = products.filter(
+            name__icontains=query
+        ).distinct() | products.filter(
+            attributes__name__icontains=query
+        ).distinct() | products.filter(
+            attributes__value__icontains=query
+        ).distinct()
+    else:
+        products = Product.objects.all()
+
     return render(request, 'shop.html', {'products': products})

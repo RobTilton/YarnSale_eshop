@@ -4,21 +4,33 @@
 
 {% block content %}
 <div class="container my-5 py-5">
+    <!-- Search Form -->
+    <form action="{% url 'shop' %}" method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search products" name="q" value="{{ request.GET.q }}">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
     <h1 class="text-center">The Shop Page</h1>
     <p class="text-center">The Page Where You Can Buy The Things</p>
+    
     <div class="row">
         {% for product in products %}
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     {% if product.image %}
                         <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">{{ product.description }}</p>
-                        <p class="card-text">Price: ${{ product.price|cents_to_dollars }}</p>
-                        <!-- Future button or link to product details -->
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Price: ${{ product.price|cents_to_dollars }}</span>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
