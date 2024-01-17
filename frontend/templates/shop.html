@@ -1,22 +1,28 @@
 {% extends 'base.html'%}
 {% load static %}
+{% load shop_filters %}
 
 {% block content %}
-    <div class="text-center my-5 py-5">
-        <h1>The Shop Page</h1>
-        <p>The Page Where You Can Buy The Things</p>
-        <div class="product-list">
-            {% for product in products %}
-                <div class="product-item">
-                    <h2>{{ product.name }}</h2>
-                    <p>{{ product.description }}</p>
-                    <p>Price: ${{ product.price }}</p>
-                    <!-- Display the image if it exists -->
+<div class="container my-5 py-5">
+    <h1 class="text-center">The Shop Page</h1>
+    <p class="text-center">The Page Where You Can Buy The Things</p>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
                     {% if product.image %}
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
                     {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">Price: ${{ product.price|cents_to_dollars }}</p>
+                        <!-- Future button or link to product details -->
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock %}
