@@ -27,7 +27,7 @@ def contact(request):
         #     fail_silently=False,
         # )
 
-        # Add a success message or redirect
+        
         messages.success(request, 'Your message has been sent!')
         return redirect('contact')
 
