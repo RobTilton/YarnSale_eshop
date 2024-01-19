@@ -113,6 +113,72 @@ html body nav.navbar .navbar-nav .nav-link:hover {
 }
 
 /* Shop card */
-.borderless-card {
-    border: none !important; 
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-bottom: 1rem; /* Space between cards */
+    border: none !important; /* Removes card border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow to card */
+    transition: all 0.2s; /* Smooth transition for hover effect */
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for hover effect */
+}
+
+.card-img-top {
+    width: 100%; /* responsive image width */
+    height: 200px; /* fixed height for consistency */
+    object-fit: cover; /* cover the area without stretching */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Reduced space between title and description */
+}
+
+.card-text {
+    flex-grow: 1; /* Allows description to expand and push price/button down */
+    min-height: 60px; /* Ensures descriptions are uniform */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits to 3 lines of text */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 4.5em; /* Adjust based on your line-height and font-size */
+    line-height: 1.5em; /* Example line-height, set this as needed */
+    height: auto; /* Remove if you are using max-height */
+    margin-bottom: 1rem; /* Space between the description and the footer */
+}
+
+
+/* Align price to the left and button to the right */
+.card-footer {
+    background: inherit;
+    border-top: none;
+    margin-top: auto;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.view-details-btn {
+    margin-left: auto; /* Pushes button to the right */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: auto; /* On small screens, let image height be auto */
+    }
 }
