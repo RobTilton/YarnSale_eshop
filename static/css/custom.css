@@ -119,6 +119,7 @@ html body nav.navbar .navbar-nav .nav-link:hover {
 }
 
 .card {
+    position: relative;
     margin-bottom: 1rem; /* Space between cards */
     border: none !important; /* Removes card border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow to card */
@@ -180,4 +181,22 @@ html body nav.navbar .navbar-nav .nav-link:hover {
     .card-img-top {
         height: auto; /* On small screens, let image height be auto */
     }
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 55px; /* Adjust this value based on the height of your footer */
+    background: rgba(255, 255, 255, 0.9); /* semi-transparent white background */
+    color: #333;
+    padding: 1rem;
+    overflow-y: auto; /* In case the content is too long */
+    z-index: 10; /* Make sure it's above other content */
+    display: none; /* Hidden by default */
+    border-bottom: 1px solid #eaeaea; 
+}
+.card:hover .card-overlay {
+    display: block; /* Show the overlay when card is hovered */
 }

@@ -19,22 +19,42 @@
     
     <div class="row row-eq-height">
         {% for product in products %}
-            <div class="col-md-4 mb-4">
-                <div class="card shadow">
-                    {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
-                    </div>
-                    <div class="card-footer d-flex align-items-center">
-                        <span class="price">Price: ${{ product.price|cents_to_dollars }}</span>
-                        <a href="#" class="btn btn-primary view-details-btn">View Details</a>
-                    </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <!-- Card Image -->
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                {% endif %}
+                <!-- Card Body -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                </div>
+                <!-- Card Overlay for Attributes -->
+                <div class="card-overlay" style="display: none;">
+                    <ul>
+                        {% for attribute in product.attributes.all %}
+                            <li>{{ attribute.name }}: {{ attribute.value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Card Footer -->
+                <div class="card-footer d-flex align-items-center">
+                    <span class="price">Price: ${{ product.price|cents_to_dollars }}</span>
+                    <button onclick="showAttributes(this)" class="btn btn-primary view-details-btn">View Details</button>
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </div>
+<script>
+    function showAttributes(button) {
+        // Find the closest parent card element
+        var card = button.closest('.card');
+        // Toggle the display of the overlay
+        var overlay = card.querySelector('.card-overlay');
+        overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+    }
+    </script>
 {% endblock %}
