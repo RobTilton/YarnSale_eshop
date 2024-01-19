@@ -8,6 +8,7 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login as auth_login
+from django.utils import timezone
 
 def login(request):
     if request.method == 'POST':
@@ -75,7 +76,7 @@ def shop(request):
         products = Product.objects.all()
 
     return render(request, 'shop.html', {'products': products})
-'''
+
 @require_POST
 @login_required
 def add_to_cart(request, product_id):
@@ -88,4 +89,4 @@ def add_to_cart(request, product_id):
         cart_item.save()
 
     return JsonResponse({'status': 'success', 'cart_item_quantity': cart_item.quantity})
-'''
+

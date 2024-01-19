@@ -49,13 +49,40 @@
         {% endfor %}
     </div>
 </div>
-<script>
-    function showAttributes(button) {
-        // Find the closest parent card element
-        var card = button.closest('.card');
-        // Toggle the display of the overlay
-        var overlay = card.querySelector('.card-overlay');
-        overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+{% block extrajs %}
+    <script>
+
+        function showAttributes(button) {
+            // Find the closest parent card element
+            var card = button.closest('.card');
+            // Toggle the display of the overlay
+            var overlay = card.querySelector('.card-overlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+        }
+
+    </script>
+    <script>
+    function addToCart(productId) {
+        var url = `{% url 'add_to_cart' 0 %}`.replace('/0/', '/' + productId + '/');
+        var csrftoken = '{{ csrf_token }}'; // You might need to handle CSRF token differently
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
+            body: JSON.stringify({'product_id': productId})
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Item added to cart:', data);
+            // Update cart item count on the page or show a message to the user
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     }
     </script>
+{% endblock %}
 {% endblock %}
