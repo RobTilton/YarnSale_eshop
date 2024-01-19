@@ -42,6 +42,7 @@
                 <div class="card-footer d-flex align-items-center">
                     <span class="price">Price: ${{ product.price|cents_to_dollars }}</span>
                     <button onclick="showAttributes(this)" class="btn btn-primary view-details-btn">View Details</button>
+                    <button onclick="addToCart({{ product.id }})" class="btn btn-success">Add to Cart</button>
                 </div>
             </div>
         </div>
