@@ -77,6 +77,19 @@ def shop(request):
 
     return render(request, 'shop.html', {'products': products})
 
+def view_cart(request):
+    try:
+        cart = Cart.objects.get(user=request.user)
+        cart_items = CartItem.objects.filter(cart=cart)
+    except Cart.DoesNotExist:
+        cart_items = []
+
+    for item in cart_items:
+        item.total_price = item.quantity * item.product.price
+
+
+    return render(request, 'cart.html', {'cart_items': cart_items})
+
 @require_POST
 @login_required
 def add_to_cart(request, product_id):
