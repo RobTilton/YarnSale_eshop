@@ -24,6 +24,12 @@
                     </tr>
                 {% endfor %}
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>${{ total_cost|cents_to_dollars }}</td>
+                </tr>
+            </tfoot>
         </table>
     {% else %}
         <p>Your cart is empty.</p>

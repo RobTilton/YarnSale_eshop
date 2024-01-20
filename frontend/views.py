@@ -87,8 +87,17 @@ def view_cart(request):
     for item in cart_items:
         item.total_price = item.quantity * item.product.price
 
+    total_cost = 0
+    try:
+        cart = Cart.objects.get(user=request.user)
+        cart_items = CartItem.objects.filter(cart=cart)
+        for item in cart_items:
+            item.total_price = item.quantity * item.product.price
+            total_cost += item.total_price
+    except Cart.DoesNotExist:
+        cart_items = []
 
-    return render(request, 'cart.html', {'cart_items': cart_items})
+    return render(request, 'cart.html', {'cart_items': cart_items, 'total_cost': total_cost})
 
 @require_POST
 @login_required
