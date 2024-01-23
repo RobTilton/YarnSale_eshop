@@ -8,6 +8,7 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login as auth_login
+from django.contrib.auth import logout
 from django.utils import timezone
 
 def login(request):
@@ -19,6 +20,11 @@ def login(request):
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+
+def custom_logout(request):
+    logout(request)
+    return redirect('home')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -59,6 +65,7 @@ def contact(request):
 
     return render(request, 'contact.html')
 
+@login_required
 def shop(request):
     query = request.GET.get('q')
     if query:
@@ -77,6 +84,7 @@ def shop(request):
 
     return render(request, 'shop.html', {'products': products})
 
+@login_required
 def view_cart(request):
     try:
         cart = Cart.objects.get(user=request.user)
