@@ -107,6 +107,26 @@ def view_cart(request):
 
     return render(request, 'cart.html', {'cart_items': cart_items, 'total_cost': total_cost})
 
+@login_required
+def update_cart(request):
+    if request.method == 'POST':
+        for key, value in request.POST.items():
+            if key.startswith('quantity_'):
+                item_id = key.split('_')[1]
+                quantity = int(value)
+                cart_item = CartItem.objects.get(id=item_id)
+                if quantity > 0:
+                    cart_item.quantity = quantity
+                    cart_item.save()
+                else:
+                    cart_item.delete()
+    return redirect('view_cart')
+
+@login_required
+def remove_from_cart(request, item_id):
+    CartItem.objects.get(id=item_id).delete()
+    return redirect('view_cart')
+
 @require_POST
 @login_required
 def add_to_cart(request, product_id):

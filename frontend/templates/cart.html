@@ -5,34 +5,41 @@
 <div class="container">
     <h2>Your Cart</h2>
     {% if cart_items %}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in cart_items %}
-                    <tr>
-                        <td>{{ item.product.name }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>${{ item.product.price|cents_to_dollars }}</td>
-                        <td>${{ item.total_price|cents_to_dollars }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-            <tfoot>
+        <form method="post" action="{% url 'update_cart' %}">
+            {% csrf_token %}
+            <table class="table">
+                <!-- ... table headers ... -->
+                <tbody>
+                    {% for item in cart_items %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>
+                                <input type="number" name="quantity_{{ item.id }}" value="{{ item.quantity }}" min="0" onchange="updateQuantity({{ item.id }}, this.value)">
+                            </td>
+                            <td>${{ item.product.price|cents_to_dollars }}</td>
+                            <td>${{ item.total_price|cents_to_dollars }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
                 <tr>
                     <td colspan="3">Total</td>
                     <td>${{ total_cost|cents_to_dollars }}</td>
                 </tr>
-            </tfoot>
-        </table>
+            </table>
+            <button type="submit" class="btn btn-primary">Update Cart</button>
+        </form>
     {% else %}
         <p>Your cart is empty.</p>
     {% endif %}
 </div>
 {% endblock %}
+
+<script>
+function updateQuantity(itemId, quantity) {
+    if (quantity == 0) {
+        if (confirm('Are you sure you want to remove this item from your cart?')) {
+            window.location.href = `{% url 'remove_from_cart' %}` + itemId + '/';
+        }
+    }
+}
+</script>
