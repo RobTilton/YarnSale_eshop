@@ -27,42 +27,40 @@ Technical Details
 
 Installation Instructions
 =========================
+
 1. **Clone the Repository**: Fork the repository and clone your fork to your local machine. 
-        To do this, open your RUN box ( windows + R ) then enter
-    .. code-block:: bash    
-        'cmd'
-    
-    Navigate to the directory you want to use for the clone and enter the command:
-        
-    .. code-block:: bash
-        
-      git clone https://github.com/your-username/repository-name.git
-        
-    Replace the URL with the one to your fork of this repo.
+   To do this, open your RUN box (Windows + R), then enter 'cmd'. 
+   Navigate to the directory you want to use for the clone and enter the command:
+
+   .. code-block:: bash
+
+       git clone https://github.com/your-username/repository-name.git
+
+   Replace the URL with the one to your fork of this repo.
 
 2. **Set Up a Virtual Environment**: Create and activate a virtual environment in the project directory:
-        
-    .. code-block:: bash
 
-      # On Windows
-      python -m venv venv
-      .\\venv\\Scripts\\activate
+   .. code-block:: bash
 
-      # On Unix or MacOS
-      python3 -m venv venv
-      source venv/bin/activate
+       # On Windows
+       python -m venv venv
+       .\\venv\\Scripts\\activate
+
+       # On Unix or MacOS
+       python3 -m venv venv
+       source venv/bin/activate
 
 3. **Install Dependencies**: Install the required packages from `requirements.txt`:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-      pip install -r requirements.txt
- 
+       pip install -r requirements.txt
+
 4. **Running the Application**: Start the Django development server:
 
    .. code-block:: bash
 
-      python manage.py runserver
+       python manage.py runserver
 
 Usage Instructions
 ==================
