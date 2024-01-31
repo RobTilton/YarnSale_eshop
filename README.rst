@@ -25,8 +25,8 @@ Technical Details
 - **Database**: SQLite (default), configurable for other databases.
 - **Languages**: Python, HTML, CSS.
 
-Installation Instructions
-=========================
+Dev Environment Setup
+=====================
 
 1. **Clone the Repository**: Fork the repository and clone your fork to your local machine. 
    To do this, open your RUN box (Windows + R), then enter 'cmd'. 
