@@ -97,6 +97,9 @@ The shop is designed to enhance user experience with several search and filter o
 Each product is presented in a card format, providing essential information at a glance. Users can click on a 
 product card to view more detailed attributes of each item.
 
+.. image:: static/images/YardSale_003.png
+    :alt: Homepage
+
 Shopping Cart
 -------------
 The shopping cart is an integral part of the e-commerce experience:

@@ -8,7 +8,15 @@
         <form method="post" action="{% url 'update_cart' %}">
             {% csrf_token %}
             <table class="table">
-                <!-- ... table headers ... -->
+                <thead>
+                    <tr>
+                        <!-- Assuming you have other headers like Product Name -->
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
                 <tbody>
                     {% for item in cart_items %}
                         <tr>
@@ -21,10 +29,12 @@
                         </tr>
                     {% endfor %}
                 </tbody>
-                <tr>
-                    <td colspan="3">Total</td>
-                    <td>${{ total_cost|cents_to_dollars }}</td>
-                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align:right;">Total</td>
+                        <td>${{ total_cost|cents_to_dollars }}</td>
+                    </tr>
+                </tfoot>
             </table>
             <button type="submit" class="btn btn-primary">Update Cart</button>
         </form>
