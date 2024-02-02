@@ -97,9 +97,6 @@ The shop is designed to enhance user experience with several search and filter o
 Each product is presented in a card format, providing essential information at a glance. Users can click on a 
 product card to view more detailed attributes of each item.
 
-.. image:: static/images/YardSale_003.png
-    :alt: Homepage
-
 Shopping Cart
 -------------
 The shopping cart is an integral part of the e-commerce experience:
@@ -108,13 +105,14 @@ The shopping cart is an integral part of the e-commerce experience:
 - **Viewing the Cart**: The cart page summarizes all items a user plans to purchase, allowing for review before proceeding.
 - **Removing Items**: Users have the option to remove items from the cart if they change their mind.
 
+.. image:: static/images/YardSale_003.png
+    :alt: Homepage
+
 Checkout Process
 ----------------
 While the website simulates a complete e-commerce experience, the checkout process is not implemented, 
 as this platform serves as a demonstration of web development skills and is not intended for actual transactions.
 
-
-  
 Contact Information
 ===================
 If you wish to ask me about anything seen here, email me at RobertJTilon89@Gmail.com
