@@ -64,16 +64,53 @@ Dev Environment Setup
 
 Usage Instructions
 ==================
-Provide a basic guide on how to navigate and use the website, including account creation, browsing products, adding items to the cart, and checking out.
+
+Account Creation
+----------------
+To begin exploring the features of the website, users must first create an account. The account creation process is straightforward:
+
+- Navigate to the Sign-Up page from the homepage.
+- Fill in the required fields with your information.
+- Submit the form to create your account.
+
+Upon successful account creation, users can log in, browse products, and add them to their cart.
+
+Browsing and Searching Products
+-------------------------------
+The shop is designed to enhance user experience with several search and filter options:
+
+- **Color**: Users can filter products based on their color preferences from the choices of Blue, Red, Green, Yellow, and Purple.
+- **Length**: For products where length is applicable, users can search for 100, 200, and 300 length yarns.
+- **Weight**: For products where weight is applicable, users can search for Light, Medium, and Heavy yarn weight.
+- **Material**: A key search feature for users interested in products made from specific materials.
+- **By Name**: If a user knows exactly what they are looking for, a simple name search is available.
+
+Each product is presented in a card format, providing essential information at a glance. Users can click on a 
+product card to view more detailed attributes of each item.
+
+Shopping Cart
+-------------
+The shopping cart is an integral part of the e-commerce experience:
+
+- **Adding Products**: When browsing, users can add products to their cart with a single click.
+- **Viewing the Cart**: The cart page summarizes all items a user plans to purchase, allowing for review before proceeding.
+- **Removing Items**: Users have the option to remove items from the cart if they change their mind.
+
+Checkout Process
+----------------
+While the website simulates a complete e-commerce experience, the checkout process is not implemented, 
+as this platform serves as a demonstration of web development skills and is not intended for actual transactions.
+
 
 Features
 ========
-List the key features
-
-License
-=======
-Specify the license, Learn about licenses.
-
+- **Database Design**: Efficiently structured relational database for storing user data, product information, and transaction records.
+- **RESTful API**: API endpoints for handling CRUD operations on products, users, and orders, demonstrating the use of Django REST Framework.
+- **Security**: Implementation of security best practices, including password hashing and user authentication. 
+- **Advanced Search**: Users can search for products by keywords.
+- **Data Population**: Use of Faker library to generate realistic product data for demonstration purposes.
+- **Image Handling**: Use of Pillow library to seamlessly handle images for products.
+  
 Contact Information
 ===================
 If you wish to ask me about anything seen here, email me at RobertJTilon89@Gmail.com
