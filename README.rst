@@ -29,8 +29,8 @@ Features
 
 Technical Details
 =================
-- **Django Version**: 5.0.1
-- **Key Dependencies**: Django REST Framework 3.14.0, Faker 22.2.0, Pillow 10.2.0.
+
+- **Key Dependencies**: Django REST Framework, Faker, Pillow.
 - **Database**: SQLite (default), configurable for other databases.
 - **Languages**: Python, HTML, CSS.
 
@@ -115,4 +115,4 @@ as this platform serves as a demonstration of web development skills and is not 
 
 Contact Information
 ===================
-If you wish to ask me about anything seen here, email me at RobertJTilon89@Gmail.com
+If you wish to ask me about anything seen here, email me at RobertJTilton89@Gmail.com
