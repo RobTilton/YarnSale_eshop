@@ -8,7 +8,7 @@ Your E-Commerce Website
     :alt: Shop page
 Overview
 ========
-    This Django e-commerce website showcases my proficiency in Django, 
+This Django e-commerce website showcases my proficiency in Django, 
 Python, CSS, HTML, and Django REST Framework. It's designed to 
 highlight my skills in account creation, database design, API calls, 
 and version control with Git. Using Faker, I've scripted realistic 
