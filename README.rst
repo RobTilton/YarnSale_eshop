@@ -1,7 +1,11 @@
 ===========================
 Your E-Commerce Website
 ===========================
-
+.. image:: static/images/YardSale_001.png
+    :alt: Homepage
+    
+.. image:: static/images/YardSale_002.png
+    :alt: Shop page
 Overview
 ========
 My Django project is a simple e-commerce website designed to showcase my skills
