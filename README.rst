@@ -1,10 +1,10 @@
 ===========================
 Your E-Commerce Website
 ===========================
-.. image:: static/images/YardSale_002.png
+.. image:: static/images/YardSale_001.png
     :alt: Homepage
     
-.. image:: static/images/YardSale_001.png
+.. image:: static/images/YardSale_002.png
     :alt: Shop page
 Overview
 ========
