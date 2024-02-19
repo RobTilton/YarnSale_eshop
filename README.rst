@@ -1,5 +1,5 @@
 ===========================
-Your E-Commerce Website
+YarnSale Website
 ===========================
 .. image:: static/images/YardSale_001.png
     :alt: Homepage
